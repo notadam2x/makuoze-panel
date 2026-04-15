@@ -73,7 +73,7 @@ export default function DashboardPage() {
       glow: 'shadow-[0_0_20px_rgba(177,0,0,0.15)]'
     },
     { 
-      label: 'Passive Bonus', 
+      label: 'Sub-Affiliate Income', 
       value: `${stats?.sub_affiliate_earnings || 0}`, 
       suffix: 'SOL',
       icon: Globe, 
