@@ -30,18 +30,48 @@
   --background: #000000;
   --foreground: #ededed;
   --makuoze-gradient: linear-gradient(135deg, #b10000 0%, #4a0000 100%);
+  
+  /* Fluid Scaling Ratios */
+  --font-fluid-base: clamp(14px, 1.2vw + 10px, 16px);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-size: var(--font-fluid-base);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
 }
 
-/* Glassmorphism Components */
+/* Safe Area Helpers */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 1.5rem);
+}
+
+.safe-area-pt {
+  padding-top: env(safe-area-inset-top, 1rem);
+}
+
+/* Number Shrink Logic - Prevents design break on long SOL values */
+.text-shrink-logic {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+@media (max-width: 380px) {
+  .text-shrink-logic {
+    font-size: 0.85em;
+  }
+}
+@media (max-width: 340px) {
+  .text-shrink-logic {
+    font-size: 0.75em;
+  }
+}
 .glass-panel {
   background: rgba(9, 9, 11, 0.6);
   backdrop-filter: blur(12px);

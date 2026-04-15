@@ -92,7 +92,7 @@ export default function DashboardPage() {
       >
         <div>
           <div className="flex items-center gap-3 mb-1">
-            <h1 className="text-3xl font-black uppercase italic tracking-tighter">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase italic tracking-tighter">
               Terminal <span className="text-makuoze-red">Active</span>
             </h1>
             <div className="size-2 bg-makuoze-red rounded-full animate-pulse shadow-[0_0_8px_#b10000]" />
@@ -118,7 +118,7 @@ export default function DashboardPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1 }}
-            className={`glass-panel p-8 rounded-[2rem] group hover:scale-[1.02] transition-all relative overflow-hidden ${card.glow}`}
+            className={`glass-panel p-5 sm:p-8 rounded-[2rem] group hover:scale-[1.02] transition-all relative overflow-hidden ${card.glow}`}
           >
             {/* Top Icon */}
             <div className={`size-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center mb-6 group-hover:border-makuoze-red/30 transition-colors ${card.color}`}>
@@ -126,9 +126,9 @@ export default function DashboardPage() {
             </div>
 
             <h3 className="text-zinc-500 text-[10px] font-black uppercase tracking-widest mb-1">{card.label}</h3>
-            <div className="flex items-baseline gap-2">
-              <p className="text-3xl font-black text-white italic tracking-tighter">{card.value}</p>
-              <span className="text-xs font-black text-makuoze-red italic">{card.suffix}</span>
+            <div className="flex items-baseline gap-2 overflow-hidden">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-black text-white italic tracking-tighter text-shrink-logic">{card.value}</p>
+              <span className="text-xs font-black text-makuoze-red italic flex-shrink-0">{card.suffix}</span>
             </div>
 
             {/* Background Texture Detail */}
@@ -145,7 +145,7 @@ export default function DashboardPage() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3 }}
-          className="glass-panel rounded-[2.5rem] p-8 border-white/5"
+          className="glass-panel rounded-[2.5rem] p-5 sm:p-8 border-white/5"
         >
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">

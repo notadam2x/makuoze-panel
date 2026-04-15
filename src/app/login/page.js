@@ -61,9 +61,9 @@ export default function LoginPage() {
             <Image
               src="/makuoze-no-bg.png"
               alt="Makuoze Logo"
-              width={220}
-              height={80}
-              className="mb-4 drop-shadow-[0_0_15px_rgba(177,0,0,0.4)]"
+              width={200}
+              height={70}
+              className="mb-4 drop-shadow-[0_0_15px_rgba(177,0,0,0.4)] px-6"
             />
             <div className="flex items-center justify-center gap-2 text-zinc-500 text-[10px] font-black uppercase tracking-[0.3em] opacity-50">
               <Lock size={10} />
@@ -72,7 +72,7 @@ export default function LoginPage() {
           </motion.div>
         </div>
 
-        <div className="glass-panel p-10 rounded-[2.5rem] relative">
+        <div className="glass-panel p-6 sm:p-10 rounded-[2.5rem] relative">
           {/* Top Industrial Detail */}
           <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-20 h-3 bg-makuoze-red rounded-full blur-[1px] opacity-20" />
 

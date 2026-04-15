@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: 'Makuoze Drainer | Partner Portal',
   description: 'Enterprise Grade Crypto Revenue Management',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover',
 };
 
 export default function RootLayout({ children }) {
