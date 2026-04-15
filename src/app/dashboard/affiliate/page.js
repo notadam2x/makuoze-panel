@@ -70,7 +70,7 @@ export default function AffiliatePage() {
         className="flex flex-col md:flex-row md:items-center justify-between gap-4"
       >
         <div>
-          <h1 className="text-[var(--header-fluid-h1)] font-black uppercase italic tracking-tighter flex items-center gap-3 text-white">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black uppercase italic tracking-tighter flex items-center gap-3 text-white leading-none">
             Affiliate <span className="text-makuoze-red">Network</span>
           </h1>
           <p className="text-zinc-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest mt-1">Manage and monitor your sub-affiliate extractions.</p>

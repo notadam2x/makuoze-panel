@@ -139,7 +139,7 @@ export default function BotsHubPage() {
         className="flex flex-col md:flex-row md:items-center justify-between gap-4"
       >
         <div>
-          <h1 className="text-3xl font-black uppercase italic tracking-tighter flex items-center gap-3 text-white">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black uppercase italic tracking-tighter flex items-center gap-3 text-white leading-none">
             Partners <span className="text-makuoze-red">Hub</span>
           </h1>
           <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest mt-1">Access and distribute multi-chain extraction tools.</p>

@@ -92,10 +92,10 @@ export default function DashboardPage() {
       >
         <div>
           <div className="flex items-center gap-3 mb-1">
-            <h1 className="text-[var(--header-fluid-h1)] font-black uppercase italic tracking-tighter text-white">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black uppercase italic tracking-tighter text-white leading-none">
               Terminal <span className="text-makuoze-red">Active</span>
             </h1>
-            <div className="size-2 bg-makuoze-red rounded-full animate-pulse shadow-[0_0_8px_#b10000] flex-shrink-0" />
+            <div className="size-2 md:size-3 bg-makuoze-red rounded-full animate-pulse shadow-[0_0_12px_#b10000] flex-shrink-0" />
           </div>
           <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest">
             Operator: <span className="text-white">{user?.affiliate_name}</span>
