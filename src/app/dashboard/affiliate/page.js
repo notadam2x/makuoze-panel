@@ -70,10 +70,10 @@ export default function AffiliatePage() {
         className="flex flex-col md:flex-row md:items-center justify-between gap-4"
       >
         <div>
-          <h1 className="text-3xl font-black uppercase italic tracking-tighter flex items-center gap-3">
+          <h1 className="text-[var(--header-fluid-h1)] font-black uppercase italic tracking-tighter flex items-center gap-3">
             Affiliate <span className="text-makuoze-red">Network</span>
           </h1>
-          <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest mt-1">Manage and monitor your sub-affiliate extractions.</p>
+          <p className="text-zinc-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest mt-1">Manage and monitor your sub-affiliate extractions.</p>
         </div>
       </motion.header>
 
@@ -89,14 +89,14 @@ export default function AffiliatePage() {
           <div className="absolute inset-0 bg-makuoze-gradient opacity-90" />
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
 
-          <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+          <div className="relative z-10 p-6 sm:p-8 h-full flex flex-col justify-between">
             <div>
-              <Users className="size-10 text-white/40 mb-4" />
-              <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter mb-2 leading-none">
-                Expand Your <br /> <span className="text-white/40">Sub Affiliate Network</span>
+              <Users className="size-8 sm:size-10 text-white/40 mb-4" />
+              <h3 className="text-xl sm:text-2xl font-black text-white uppercase italic tracking-tighter mb-2 leading-tight">
+                Expand Your <br /> <span className="text-white/40">Network</span>
               </h3>
-              <p className="text-white/60 text-[10px] font-bold leading-relaxed max-w-[240px] uppercase">
-                Recruit new premium operators and secure <span className="text-makuoze-red-light">20% Passive Extractions</span> from their total volume. Build your empire.
+              <p className="text-white/60 text-[9px] sm:text-[10px] font-bold leading-relaxed max-w-[200px] sm:max-w-[240px] uppercase">
+                Recruit operators and secure <span className="text-makuoze-red-light">20% Passive Extractions</span>.
               </p>
             </div>
 
@@ -215,7 +215,7 @@ export default function AffiliatePage() {
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              className="relative w-full max-w-lg glass-panel p-10 rounded-[3rem] border-makuoze-red/20 shadow-[0_0_50px_rgba(177,0,0,0.15)] overflow-hidden"
+              className="relative w-full max-w-lg glass-panel p-6 sm:p-10 rounded-[3rem] border-makuoze-red/20 shadow-[0_0_50px_rgba(177,0,0,0.15)] overflow-hidden"
             >
               {/* Background Detail */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-makuoze-gradient" />
@@ -234,7 +234,7 @@ export default function AffiliatePage() {
                     <ProfitIcon size={28} />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-black uppercase italic tracking-tighter text-white">Sub-Affiliate <span className="text-makuoze-red">Protocol</span></h2>
+                    <h2 className="text-xl sm:text-2xl font-black uppercase italic tracking-tighter text-white leading-tight">Sub-Affiliate <br className="block sm:hidden" /> <span className="text-makuoze-red">Protocol</span></h2>
                   </div>
                 </div>
 

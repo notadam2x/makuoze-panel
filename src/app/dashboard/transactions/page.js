@@ -65,11 +65,11 @@ export default function TransactionsPage() {
         className="flex flex-col md:flex-row md:items-center justify-between gap-6"
       >
         <div>
-          <h1 className="text-3xl font-black uppercase italic tracking-tighter flex items-center gap-3">
+          <h1 className="text-[var(--header-fluid-h1)] font-black uppercase italic tracking-tighter flex items-center gap-3">
             Exploit <span className="text-makuoze-red">Logs</span>
             <div className="text-[10px] font-black bg-zinc-900 px-2 py-1 rounded border border-white/5 text-zinc-500 not-italic">V2.4</div>
           </h1>
-          <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest mt-1">Real-time split transmission records.</p>
+          <p className="text-zinc-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest mt-1">Real-time split transmission records.</p>
         </div>
 
         <div className="relative group w-full md:w-80">
@@ -100,9 +100,9 @@ export default function TransactionsPage() {
                 <div className="p-6 flex items-center justify-between gap-4">
                   {/* Left: Icon & Name */}
                   <div className="flex items-center gap-5">
-                    <div className="size-14 rounded-2xl bg-black border border-white/5 flex flex-col items-center justify-center group-hover:border-makuoze-red/40 transition-colors">
-                      <span className="text-[10px] font-black text-makuoze-red leading-none">{date.day}</span>
-                      <span className="text-[10px] font-black text-zinc-600 mt-1 leading-none">{date.time}</span>
+                    <div className="size-12 sm:size-14 rounded-2xl bg-black border border-white/5 flex flex-col items-center justify-center group-hover:border-makuoze-red/40 transition-colors">
+                      <span className="text-[9px] sm:text-[10px] font-black text-makuoze-red leading-none">{date.day}</span>
+                      <span className="text-[9px] sm:text-[10px] font-black text-zinc-600 mt-1 leading-none">{date.time}</span>
                     </div>
                     
                     <div>
@@ -115,7 +115,7 @@ export default function TransactionsPage() {
                         }`}>
                           {tx.payer_type.replace('_', ' ')}
                         </span>
-                        <span className="text-[9px] font-black text-zinc-600 uppercase tracking-widest">SPLIT_TRANS_ID: {tx._id.slice(-6).toUpperCase()}</span>
+                        <span className="hidden sm:block text-[9px] font-black text-zinc-600 uppercase tracking-widest">SPLIT_TRANS_ID: {tx._id.slice(-6).toUpperCase()}</span>
                       </div>
                     </div>
                   </div>
@@ -137,8 +137,8 @@ export default function TransactionsPage() {
                   </div>
                 </div>
 
-                {/* Bottom Detail Strip (Optional/Expanded) */}
-                <div className="bg-white/[0.02] px-6 py-2 border-t border-white/5 flex items-center justify-between text-[8px] font-black text-zinc-700 uppercase tracking-[0.2em]">
+                {/* Bottom Detail Strip - Desktop Only */}
+                <div className="hidden sm:flex bg-white/[0.02] px-6 py-2 border-t border-white/5 items-center justify-between text-[8px] font-black text-zinc-700 uppercase tracking-[0.2em]">
                   <span>NET_REVENUE_EXTRACTED</span>
                   <span className="text-zinc-500">NETWORK_TAG: {tx.affiliate_name}</span>
                 </div>

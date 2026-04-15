@@ -92,7 +92,7 @@ export default function DashboardPage() {
       >
         <div>
           <div className="flex items-center gap-3 mb-1">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase italic tracking-tighter">
+            <h1 className="text-[var(--header-fluid-h1)] font-black uppercase italic tracking-tighter">
               Terminal <span className="text-makuoze-red">Active</span>
             </h1>
             <div className="size-2 bg-makuoze-red rounded-full animate-pulse shadow-[0_0_8px_#b10000]" />
@@ -127,7 +127,7 @@ export default function DashboardPage() {
 
             <h3 className="text-zinc-500 text-[10px] font-black uppercase tracking-widest mb-1">{card.label}</h3>
             <div className="flex items-baseline gap-2 overflow-hidden">
-              <p className="text-xl sm:text-2xl lg:text-3xl font-black text-white italic tracking-tighter text-shrink-logic">{card.value}</p>
+              <p className="text-[var(--header-fluid-h2)] sm:text-2xl lg:text-3xl font-black text-white italic tracking-tighter text-shrink-logic">{card.value}</p>
               <span className="text-xs font-black text-makuoze-red italic flex-shrink-0">{card.suffix}</span>
             </div>
 

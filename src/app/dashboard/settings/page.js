@@ -94,10 +94,10 @@ export default function SettingsPage() {
         className="flex flex-col md:flex-row md:items-center justify-between gap-4"
       >
         <div>
-          <h1 className="text-3xl font-black uppercase italic tracking-tighter flex items-center gap-3">
+          <h1 className="text-[var(--header-fluid-h1)] font-black uppercase italic tracking-tighter">
             Wallets <span className="text-makuoze-red">Configuration</span>
           </h1>
-          <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest mt-1">Configure your payout addresses for each node.</p>
+          <p className="text-zinc-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest mt-1">Configure your payout addresses for each node.</p>
         </div>
       </motion.header>
 
@@ -125,7 +125,7 @@ export default function SettingsPage() {
         <motion.section 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="glass-panel p-8 md:p-12 rounded-[3rem]"
+          className="glass-panel mobile-optimal-p rounded-[3rem]"
         >
           <div className="flex items-center gap-4 mb-10">
             <div className="size-14 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-zinc-300 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
@@ -139,7 +139,7 @@ export default function SettingsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {bots.map((bot) => (
-              <div key={bot.id} className="glass-card p-8 rounded-[2rem] border-white/5 group relative overflow-hidden">
+              <div key={bot.id} className="glass-card p-5 sm:p-8 rounded-[2rem] border-white/5 group relative overflow-hidden">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-2">
                     <span className="font-black text-sm uppercase italic tracking-tight text-white group-hover:text-makuoze-red transition-colors">{bot.name}</span>
