@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { 
-  Wallet, 
+import {
+  Wallet,
   Bot,
   Save,
   CheckCircle2,
@@ -16,7 +16,7 @@ export default function SettingsPage() {
   const [bots, setBots] = useState([]);
   const [loading, setLoading] = useState(true);
   const [msg, setMsg] = useState({ type: '', text: '' });
-  
+
   // Wallet state mapping: botId -> newWalletAddress
   const [walletDrafts, setWalletDrafts] = useState({});
   const [walletLoading, setWalletLoading] = useState({});
@@ -88,7 +88,7 @@ export default function SettingsPage() {
 
   return (
     <div className="space-y-10 pb-12">
-      <motion.header 
+      <motion.header
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         className="flex flex-col md:flex-row md:items-center justify-between gap-4"
@@ -108,11 +108,10 @@ export default function SettingsPage() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className={`p-5 rounded-[1.5rem] border flex items-center gap-4 ${
-              msg.type === 'success' 
-                ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-500' 
+            className={`p-5 rounded-[1.5rem] border flex items-center gap-4 ${msg.type === 'success'
+                ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-500'
                 : 'bg-makuoze-red/10 border-makuoze-red/20 text-makuoze-red-light'
-            }`}
+              }`}
           >
             {msg.type === 'success' ? <CheckCircle2 size={20} /> : <AlertCircle size={20} />}
             <span className="text-xs font-black uppercase tracking-widest">{msg.text}</span>
@@ -122,7 +121,7 @@ export default function SettingsPage() {
 
       <div className="max-w-4xl mx-auto w-full">
         {/* Payout Channels Section */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="glass-panel mobile-optimal-p rounded-[3rem]"
@@ -148,14 +147,14 @@ export default function SettingsPage() {
                     {bot.payer_type.replace('_', ' ')}
                   </span>
                 </div>
-                
+
                 <div className="space-y-4">
                   <div className="space-y-2">
                     <label className="text-[9px] font-black text-zinc-700 uppercase tracking-widest ml-1">TRX_TARGET_PATH</label>
-                    <input 
+                    <input
                       type="text"
                       value={walletDrafts[bot.id] || ''}
-                      onChange={e => setWalletDrafts({...walletDrafts, [bot.id]: e.target.value})}
+                      onChange={e => setWalletDrafts({ ...walletDrafts, [bot.id]: e.target.value })}
                       placeholder="Solana Address"
                       className="w-full bg-black/60 border border-white/5 rounded-2xl px-5 py-4 focus:outline-none focus:ring-1 focus:ring-makuoze-red/30 transition-all text-[11px] font-mono font-bold text-zinc-400 placeholder:text-zinc-800"
                     />
