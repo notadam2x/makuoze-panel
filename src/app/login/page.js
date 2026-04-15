@@ -48,7 +48,7 @@ export default function LoginPage() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-[420px] relative z-10"
+        className="w-full max-w-md md:max-w-[420px] relative z-10"
       >
         {/* Logo Section */}
         <div className="text-center mb-10">
@@ -133,7 +133,7 @@ export default function LoginPage() {
                 : 'btn-makuoze text-white text-sm'
                 }`}
             >
-              {loading ? 'Initializing...' : 'Engage System'}
+              {loading ? 'Initializing...' : 'ACCESS TERMINAL'}
 
               {/* Button Inner Glow */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
@@ -143,7 +143,7 @@ export default function LoginPage() {
 
         <div className="mt-12 text-center">
           <p className="text-zinc-700 text-[10px] font-bold uppercase tracking-[0.3em]">
-            Authorized Personnel Only <br />
+            Authorized Partner Only <br />
           </p>
         </div>
       </motion.div>
