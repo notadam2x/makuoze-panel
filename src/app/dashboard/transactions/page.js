@@ -65,7 +65,7 @@ export default function TransactionsPage() {
         className="flex flex-col md:flex-row md:items-center justify-between gap-6"
       >
         <div>
-          <h1 className="text-[var(--header-fluid-h1)] font-black uppercase italic tracking-tighter flex items-center gap-3">
+          <h1 className="text-[var(--header-fluid-h1)] font-black uppercase italic tracking-tighter flex items-center gap-3 text-white">
             Exploit <span className="text-makuoze-red">Logs</span>
             <div className="text-[10px] font-black bg-zinc-900 px-2 py-1 rounded border border-white/5 text-zinc-500 not-italic">V2.4</div>
           </h1>

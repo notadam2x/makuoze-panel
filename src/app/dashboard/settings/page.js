@@ -94,7 +94,7 @@ export default function SettingsPage() {
         className="flex flex-col md:flex-row md:items-center justify-between gap-4"
       >
         <div>
-          <h1 className="text-[var(--header-fluid-h1)] font-black uppercase italic tracking-tighter">
+          <h1 className="text-[var(--header-fluid-h1)] font-black uppercase italic tracking-tighter text-white">
             Wallets <span className="text-makuoze-red">Configuration</span>
           </h1>
           <p className="text-zinc-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest mt-1">Configure your payout addresses for each node.</p>
