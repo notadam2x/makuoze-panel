@@ -127,8 +127,8 @@ export default function DashboardPage() {
 
             <h3 className="text-zinc-500 text-[10px] font-black uppercase tracking-widest mb-1">{card.label}</h3>
             <div className="flex items-baseline gap-2 overflow-hidden">
-              <p className="text-[var(--header-fluid-h2)] sm:text-2xl lg:text-3xl font-black text-white italic tracking-tighter text-shrink-logic">{card.value}</p>
-              <span className="text-xs font-black text-makuoze-red italic flex-shrink-0">{card.suffix}</span>
+              <p className={`text-3xl sm:text-4xl lg:text-5xl font-black text-white italic tracking-tighter transition-all ${card.label === 'Personal Share' ? 'drop-shadow-[0_0_15px_rgba(177,0,0,0.4)]' : ''}`}>{card.value}</p>
+              <span className="text-sm font-black text-makuoze-red italic flex-shrink-0">{card.suffix}</span>
             </div>
 
             {/* Background Texture Detail */}
