@@ -99,8 +99,21 @@ export default function DashboardPage() {
             </h1>
             <div className="size-2 md:size-3 bg-makuoze-red rounded-full animate-pulse shadow-[0_0_12px_#b10000] flex-shrink-0" />
           </div>
-          <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest">
-            Operator: <span className="text-white">{user?.username}</span> <span className="text-zinc-700 mx-2">|</span> <span className="text-zinc-500 uppercase">Network:</span> <span className="text-zinc-300 ml-1">{user?.affiliate_name}</span>
+          <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest leading-relaxed">
+            Operator: <span className="text-white">{user?.username}</span> 
+            {(!isMaster) ? (
+              <span className="hidden md:inline">
+                <span className="text-zinc-700 mx-2">|</span> 
+                <span className="text-zinc-500 uppercase">Network:</span> 
+                <span className="text-zinc-300 ml-1">{user?.affiliate_name}</span>
+              </span>
+            ) : (
+              <span>
+                <span className="text-zinc-700 mx-2">|</span> 
+                <span className="text-zinc-500 uppercase">Network:</span> 
+                <span className="text-zinc-300 ml-1">{user?.affiliate_name}</span>
+              </span>
+            )}
           </p>
         </div>
         
@@ -156,14 +169,14 @@ export default function DashboardPage() {
               </div>
               <h3 className="font-black uppercase italic tracking-tighter text-lg">Last Transactions</h3>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <a 
                 href="/dashboard/transactions" 
-                className="text-[10px] font-black text-makuoze-red hover:text-white transition-colors uppercase tracking-widest bg-white/5 px-3 py-1 rounded-full border border-white/5 active:scale-95 transition-all"
+                className="text-[10px] font-black text-white bg-makuoze-red hover:bg-makuoze-red-light transition-all uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_4px_10px_#b1000044] active:scale-95 whitespace-nowrap"
               >
                 View All
               </a>
-              <div className="text-[10px] font-black text-zinc-600 bg-white/5 px-3 py-1 rounded-full border border-white/5 uppercase tracking-widest">
+              <div className="hidden sm:block text-[10px] font-black text-zinc-600 bg-white/5 px-3 py-1.5 rounded-full border border-white/5 uppercase tracking-widest">
                 Live Feed
               </div>
             </div>
