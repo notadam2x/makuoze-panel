@@ -54,6 +54,7 @@ export default function DashboardPage() {
       </div>
     );
   }
+  const isMaster = user?.username?.toLowerCase() === user?.affiliate_name?.toLowerCase();
 
   const statCards = [
     { 
@@ -78,7 +79,8 @@ export default function DashboardPage() {
       suffix: 'SOL',
       icon: Globe, 
       color: 'text-zinc-400',
-      glow: 'shadow-[0_0_20px_rgba(255,255,255,0.05)]'
+      glow: 'shadow-[0_0_20px_rgba(255,255,255,0.05)]',
+      hidden: !isMaster
     },
   ];
 
@@ -98,7 +100,7 @@ export default function DashboardPage() {
             <div className="size-2 md:size-3 bg-makuoze-red rounded-full animate-pulse shadow-[0_0_12px_#b10000] flex-shrink-0" />
           </div>
           <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest">
-            Operator: <span className="text-white">{user?.affiliate_name}</span>
+            Operator: <span className="text-white">{user?.username}</span> <span className="text-zinc-700 mx-2">|</span> <span className="text-zinc-500 uppercase">Network:</span> <span className="text-zinc-300 ml-1">{user?.affiliate_name}</span>
           </p>
         </div>
         
@@ -111,8 +113,8 @@ export default function DashboardPage() {
       </motion.header>
 
       {/* Main Stats Tiles */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-        {statCards.map((card, i) => (
+      <div className={`grid grid-cols-1 sm:grid-cols-2 ${isMaster ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} gap-4 md:gap-6`}>
+        {statCards.filter(c => !c.hidden).map((card, i) => (
           <motion.div
             key={card.label}
             initial={{ opacity: 0, y: 20 }}

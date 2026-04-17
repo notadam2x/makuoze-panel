@@ -11,6 +11,9 @@ export async function GET(request) {
   }
 
   const affiliateName = decoded.affiliate_name;
+  const username = decoded.username;
+  const isMaster = username.toLowerCase() === affiliateName.toLowerCase();
+
   const { searchParams } = new URL(request.url);
   const limit = parseInt(searchParams.get('limit') || '20');
 
@@ -19,8 +22,12 @@ export async function GET(request) {
     const db = client.db(process.env.DATABASE_NAME);
     const transactions = db.collection('transactions');
 
+    const baseQuery = isMaster 
+      ? { affiliate_name: affiliateName } 
+      : { payer_name: { $regex: new RegExp(`^${username}$`, 'i') } };
+
     const recentTxs = await transactions
-      .find({ affiliate_name: affiliateName })
+      .find(baseQuery)
       .sort({ timestamp: -1 })
       .limit(limit)
       .toArray();
