@@ -149,7 +149,7 @@ export default function SettingsPage() {
 
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <label className="text-[9px] font-black text-zinc-700 uppercase tracking-widest ml-1">TRX_TARGET_PATH</label>
+                    <label className="text-[9px] font-black text-zinc-700 uppercase tracking-widest ml-1">SOL TARGET WALLET</label>
                     <input
                       type="text"
                       value={walletDrafts[bot.id] || ''}
@@ -171,7 +171,7 @@ export default function SettingsPage() {
                 <div className="mt-6 flex items-center gap-2 opacity-30 group-hover:opacity-60 transition-opacity">
                   <div className="size-1.5 bg-makuoze-red rounded-full" />
                   <p className="text-[8px] font-black text-zinc-500 uppercase tracking-widest italic leading-none">
-                    MOD NODE {bot.payer_type === 'affiliate_own' ? '50%' : '25%'} SHARE_PATH
+                    MOD NODE {bot.split_percent_w1}% SHARE_PATH
                   </p>
                 </div>
               </div>
