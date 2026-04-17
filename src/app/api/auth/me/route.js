@@ -15,26 +15,33 @@ export async function GET(request) {
 
   let links = {};
   
-  // If the user has an affiliate_name, fetch their custom links from config_affiliates
+  // Fetch custom links based on role
   if (decoded.affiliate_name) {
     try {
       const client = await clientPromise;
       const db = client.db(dbName);
-      const affiliate = await db.collection('config_affiliates').findOne({ name: decoded.affiliate_name });
-      if (affiliate && affiliate.links && Object.keys(affiliate.links).length > 0) {
-        links = affiliate.links;
+
+      const username = decoded.username.toLowerCase();
+      const affiliateName = decoded.affiliate_name.toLowerCase();
+      const isMaster = username === affiliateName;
+
+      if (isMaster) {
+        // Master: Fetch from config_affiliates
+        const affiliate = await db.collection('config_affiliates').findOne({ name: decoded.affiliate_name });
+        if (affiliate && affiliate.links) {
+          links = affiliate.links;
+        }
       } else {
-        // Fallback: Check the primary payer for this affiliate
-        const primaryPayer = await db.collection('config_payers').findOne({ 
-          affiliate_name: decoded.affiliate_name,
-          payer_type: 'affiliate_own'
+        // Sub-Affiliate: Fetch from their OWN payer record
+        const subPayer = await db.collection('config_payers').findOne({ 
+          name: { $regex: new RegExp(`^${decoded.username}$`, 'i') } 
         });
-        if (primaryPayer && primaryPayer.links) {
-          links = primaryPayer.links;
+        if (subPayer && subPayer.links) {
+          links = subPayer.links;
         }
       }
     } catch (err) {
-      console.error('Error fetching affiliate links:', err);
+      console.error('Error fetching personalized links:', err);
     }
   }
 

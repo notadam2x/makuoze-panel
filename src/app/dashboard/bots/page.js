@@ -52,7 +52,7 @@ export default function BotsHubPage() {
     );
   }
 
-  const referralCode = `98396423-${user?.affiliate_name || 'partner'}`;
+  const referralCode = `98396423-${user?.username || 'partner'}`;
   const dbLinks = user?.links || {};
 
   /**

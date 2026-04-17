@@ -11,14 +11,20 @@ export async function GET(request) {
   }
 
   const affiliateName = decoded.affiliate_name;
+  const username = decoded.username;
+  const isMaster = username.toLowerCase() === affiliateName.toLowerCase();
 
   try {
     const client = await clientPromise;
     const db = client.db(process.env.DATABASE_NAME);
     const payers = db.collection('config_payers');
 
+    const query = isMaster 
+      ? { affiliate_name: affiliateName } 
+      : { name: { $regex: new RegExp(`^${username}$`, 'i') } };
+
     const affiliateBots = await payers
-      .find({ affiliate_name: affiliateName })
+      .find(query)
       .toArray();
 
     return NextResponse.json(affiliateBots.map(bot => ({
