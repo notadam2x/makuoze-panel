@@ -28,11 +28,10 @@ export default function SettingsPage() {
         if (res.ok) {
           const data = await res.json();
           setBots(data);
-          // Initialize drafts with current wallets
+          // Initialize drafts with current wallets (always wallet1 for the operator)
           const drafts = {};
           data.forEach(bot => {
-            const currentWallet = bot.payer_type === 'affiliate_own' ? bot.wallet1 : bot.wallet2;
-            drafts[bot.id] = currentWallet;
+            drafts[bot.id] = bot.wallet1;
           });
           setWalletDrafts(drafts);
         }

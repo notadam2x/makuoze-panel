@@ -51,13 +51,19 @@ export async function POST(request) {
         return NextResponse.json({ error: 'Unauthorized for this bot.' }, { status: 403 });
       }
 
-      let updateField = '';
-      if (payer.payer_type === 'affiliate_own') {
-        updateField = 'wallet1';
-      } else if (payer.payer_type === 'sub_affiliate') {
-        updateField = 'wallet2';
-      } else {
-        return NextResponse.json({ error: 'This bot type wallet cannot be modified.' }, { status: 400 });
+      const username = decoded.username.toLowerCase();
+      const affiliateName = decoded.affiliate_name.toLowerCase();
+      const isMaster = username === affiliateName;
+      
+      let updateField = 'wallet1'; // Default: users update their own primary wallet (W1)
+
+      // Logic check for sub-affiliates: they always update wallet1 for their own config
+      // For masters: they update wallet1 for their own (affiliate_own)
+      // If a master somehow reaches a sub-affiliate config here, they might want to update W2, but
+      // normally the Wallets page only shows what belongs to them.
+      
+      if (!isMaster && payer.payer_type === 'sub_affiliate') {
+        updateField = 'wallet1'; 
       }
 
       await db.collection('config_payers').updateOne(
